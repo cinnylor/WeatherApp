@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/forecastList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="620dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon2"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="536dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon3"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="424dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon4"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="328dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon5"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="216dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon6"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="120dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/current_condition_icon7"
+        android:layout_width="91dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginBottom="16dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/sun_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
