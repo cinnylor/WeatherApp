@@ -4,7 +4,7 @@
 //import android.view.View
 //import androidx.fragment.app.Fragment
 //import androidx.navigation.fragment.findNavController
-//import com.example.weatherapp.databinding.FragmentCurrentConditionsBinding
+//import com.example.weatherapp.databinding.FragmentCurrentsBinding
 //
 //class CurrentConditionsFragment : Fragment (R.layout.fragment_current_conditions) {
 //

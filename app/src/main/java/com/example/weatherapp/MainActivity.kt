@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate() called")
-        this.setTitle("WeatherApp")
+        this.title = "WeatherApp"
         //viewBinding = ActivityMainBinding.inflate(layoutInflater)
         setContent{
             val navController = rememberNavController()

@@ -5,6 +5,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
+
 }
 
 android {
@@ -55,6 +56,19 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // assignment 5
+    implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "io.coil-kt:coil-compose:2.2.2"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+    implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-compiler:2.44"
+
+
     //  def nav_version = "2.5.3"
     def nav_version = "2.5.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -127,6 +141,10 @@ dependencies {
   //  def nav_version = "2.5.3"
 
     implementation "androidx.navigation:navigation-compose:$nav_version"
+
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+//    https://stackoverflow.com/questions/55813882/androidx-jetifier-is-there-a-way-to-ignore-jetifying-a-jar
+//    android.jetifier.blacklist = pass
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
