@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="WeatherApp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/WeatherApp.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
