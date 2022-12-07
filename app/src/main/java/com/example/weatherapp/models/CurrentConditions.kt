@@ -17,6 +17,7 @@ data class CurrentConditionsData(
 
 
 data class CurrentConditions(
+    @Json(name = "name") val cityName: String,
     @Json(name = "temp") val weatherData: List<WeatherData>,
     @Json(name = "main" ) val conditions: CurrentConditionsData,
 

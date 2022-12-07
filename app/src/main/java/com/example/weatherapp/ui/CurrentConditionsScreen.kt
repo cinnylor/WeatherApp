@@ -26,6 +26,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.LifecycleOwner
 import com.example.weatherapp.R
 import com.example.weatherapp.models.CurrentConditions
+import com.example.weatherapp.models.LatitudeLongitude
 import java.time.format.TextStyle
 
 
@@ -33,29 +34,37 @@ import java.time.format.TextStyle
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun CurrentConditions(
+    latitudeLongitude: LatitudeLongitude?,
+    hasLocationPermission: Boolean,
     viewModel: CurrentConditionsViewModel = hiltViewModel(),
+    onGetWeatherForMyLocationClick: () -> Unit,
     LifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     onForecastButtonclick: () -> Unit,
 ) {
     val state by viewModel.currentConditions.collectAsState(null)
 
-    LaunchedEffect(Unit){
-        viewModel.fetchData()
-    }
+       if (latitudeLongitude != null){
+           LaunchedEffect(Unit){
+                   viewModel.fetchCurrentLocationData(latitudeLongitude)
+           }
+       } else {
+           LaunchedEffect(Unit){
+               viewModel.fetchData()
+           }
+       }
 
     Scaffold(
         topBar = { AppBar(title = stringResource(id = R.string.app_name)) },
     ) {
         state?.let {
-            CurrentConditionsContent(it) {
-                onForecastButtonclick()
-        }
+            CurrentConditionsContent(it, onGetWeatherForMyLocationClick, onForecastButtonclick)
         }
     }
 }
 @Composable
 private fun CurrentConditionsContent(
     currentConditions: CurrentConditions,
+    onGetWeatherForMyLocationClick: () -> Unit,
     onForecastButtonclick: () -> Unit,
 ) {
 
@@ -74,11 +83,10 @@ private fun CurrentConditionsContent(
         Spacer(modifier = Modifier.height(24.dp))
         Text(
             fontSize = 24.sp,
-            text = stringResource(id = R.string.city_name),
+            text = currentConditions.cityName),
             style = androidx.compose.ui.text.TextStyle(
                 fontWeight = FontWeight(600)
             )
-        )
         Spacer(modifier = Modifier.height(24.dp))
         Row(
             modifier = Modifier.padding(horizontal = 16.dp),
@@ -126,6 +134,10 @@ private fun CurrentConditionsContent(
         Button(onClick = onForecastButtonclick) {
             Text(text = stringResource(id = R.string.forecast))
         }
+        Spacer(modifier = Modifier.height(24.dp))
+        Button(onClick = onGetWeatherForMyLocationClick) {
+            Text(text = stringResource(id = R.string.get_weather_for_my_location))
+        }
     }}
 
 
@@ -134,5 +146,5 @@ private fun CurrentConditionsContent(
 )
 @Composable
 fun CurrentConditionsPreview(){
-    CurrentConditions {}
+  //  CurrentConditions {}
 }

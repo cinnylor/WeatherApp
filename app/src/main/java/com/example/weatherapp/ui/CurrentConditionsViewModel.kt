@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.weatherapp.models.CurrentConditions
+import com.example.weatherapp.models.LatitudeLongitude
 import com.example.weatherapp.service.OpenWeatherMapApi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -23,5 +24,9 @@ class CurrentConditionsViewModel @Inject constructor(private val api: OpenWeathe
         val currentConditions = api.getCurrentConditions("55423")
         _currentConditions.trySend(currentConditions)
 
+    }
+
+    fun fetchCurrentLocationData(latitudeLongitude: LatitudeLongitude) = runBlocking {
+      _currentConditions.trySend(currentConditions)
     }
 }
