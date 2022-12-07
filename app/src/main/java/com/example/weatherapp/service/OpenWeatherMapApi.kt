@@ -12,4 +12,12 @@ interface OpenWeatherMapApi {
         @Query("appid") apiKey : String = "1c2b1bb8a7bbde56bc4294eb3cca94c5 ",
         @Query("units") units: String = "imperial"
     ) : CurrentConditions
+
+    @GET("data/2.5/weather")
+    suspend fun getCurrentConditions(
+        @Query("lat") latitude: Float,
+        @Query("long") longitude: Float,
+        @Query("appid") apiKey : String = "1c2b1bb8a7bbde56bc4294eb3cca94c5 ",
+        @Query("units") units: String = "imperial",
+    ) : CurrentConditions
 }
